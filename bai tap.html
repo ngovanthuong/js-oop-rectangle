@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result1"></p>
+<p id="result2"></p>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+    function Rectangle(height,width) {
+        this.height=height;
+        this.width=width;
+
+        this.setHeight=function(height) {
+            this.height=height;
+        };
+        this.setWidth=function(width) {
+            this.width=width;
+        };
+        this.getArea=function()  {
+            return this.height*this.width;
+        };
+        this.getCircuit=function() {
+            return 2*(this.height+this.width);
+        }
+    }
+    let rectangle=new Rectangle(50,100);
+    let ctx=document.getElementById("myCanvas").getContext("2d");
+    ctx.strokeStyle="red";
+    ctx.strokeRect(10,10,100,50);
+    rectangle.setHeight(30);
+    rectangle.setWidth(60);
+    document.write( "dien tich hinh chu nhat la: "+ rectangle.getArea()+"<br>");
+    document.write( "chu vi hinh chu nhat la: "+ rectangle.getCircuit());
+</script>
+
+</body>
+</html>
